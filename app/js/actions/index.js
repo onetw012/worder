@@ -5,3 +5,7 @@ export const decrementWordIndex = () => ({
 export const incrementWordIndex = () => ({
 	type: 'INCREMENT_WORD'
 });
+
+export const nullWordIndex = () => ({
+	type: 'NULL_WORD'
+});

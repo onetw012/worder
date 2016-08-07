@@ -19,27 +19,27 @@ export default class Word extends React.Component {
 	render() {
 		const { store } = this.context;
 		const state = store.getState();
-		const word = this.getCurrentWord(state);
+		const word = this.getCurrentWord(state, store);
 		const allowDescription = state.settings.showDescription;
 		const allowTranslation = state.settings.showTranslation;
 		return (
 			<div>
 				<div>{ word.title }</div>
-				<div>{ allowDescription ? word.description : ''}</div>
 				<div>{ allowTranslation ? word.translation : ''}</div>
+				<div>{ allowDescription ? word.description : ''}</div>
 			</div>
 		);
 	}
 
 	getCurrentWord(state) {
 		const currentListIndex = state.currentList;
-		const currentWordIndex = state.currentWord;
-		return (
-			state.lists && 
-			state.lists[currentListIndex] && 
-			state.lists[currentListIndex].words && 
-			state.lists[currentListIndex].words[currentWordIndex]) ?
-			state.lists[currentListIndex].words[currentWordIndex] :
+		const list = state.lists[currentListIndex];
+		let currentWordIndex;
+		if (list && Array.isArray(list.words)) {
+			currentWordIndex = state.currentWord;
+		}
+		return (currentWordIndex !== undefined && list.words[currentWordIndex]) ?
+			list.words[currentWordIndex] :
 			EMPTY_WORD;
 	}
 }

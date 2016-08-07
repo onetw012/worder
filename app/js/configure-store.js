@@ -20,13 +20,19 @@ const DEFAULT_STATE = {
 				title: 'One',
 				translation: 'Ein',
 				description: 'Number'
+			},
+			{
+				id: 2,
+				title: 'Two',
+				translation: 'Zwei',
+				description: 'Number'
 			}
 		]
 	}],
 	settings: {
 		timeout: 0,
 		showDescription: true,
-		showTranslation: false,
+		showTranslation: true,
 		showNotification: 0
 	}
 };

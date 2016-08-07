@@ -26,11 +26,12 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loader: "css-loader!sass-loader"
+                loader: ExtractTextPlugin.extract('css!sass')
             }
         ]
     },
     plugins: [
-    	new ExtractTextPlugin("dist/style/main.css")
- 	]
+    	new ExtractTextPlugin("style/main.css")
+ 	],
+    devtool: 'source-map'
 };
