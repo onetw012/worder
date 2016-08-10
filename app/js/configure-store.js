@@ -5,7 +5,7 @@ import { loadState, saveState } from './local-storage';
 /* REDUCERS */
 import { settings } from './reducers/settings';
 import { currentWord } from './reducers/current-word';
-import { currentList } from './reducers/current-list'; 
+import { currentList } from './reducers/current-list';
 import { lists } from './reducers/lists/lists';
 
 const DEFAULT_STATE = {
