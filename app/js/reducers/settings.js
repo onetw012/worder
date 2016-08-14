@@ -1,24 +1,24 @@
 export const settings = (state = {}, action) => {
 	switch (action.type) {
-		case 'SET_TIMEOUT': {
+		case 'SHOW_WORD_IN_TIMEOUT': {
 			return {
 				...state,
 				timeout: action.value
 			};
 		}
-		case 'SET_DESCRIPTION': {
+		case 'TOGGLE_SHOW_DESCRIPTION': {
 			return {
 				...state,
-				showDescription: !!action.value
+				showDescription: !state.showDescription
 			};
 		}
-		case 'SET_TRANSLATION': {
+		case 'TOGGLE_SHOW_TRANSLATION': {
 			return {
 				...state,
-				showTranslation: !!action.value
+				showTranslation: !state.showTranslation
 			};
 		}
-		case 'SET_NOTIFICATION': {
+		case 'NOTIFY_AFTER': {
 			return {
 				...state,
 				showNotification: action.value

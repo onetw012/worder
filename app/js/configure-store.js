@@ -39,7 +39,7 @@ const DEFAULT_STATE = {
 
 
 export const configureStore = () => {
-	const persistedState = /*loadState() ||*/ DEFAULT_STATE;
+	const persistedState = loadState() || DEFAULT_STATE;
 	const worderApp = combineReducers({
 		currentWord,
 		currentList,
