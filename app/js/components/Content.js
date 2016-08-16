@@ -2,16 +2,16 @@ import React, {PropTypes} from 'react';
 import SwipeableViews from 'react-swipeable-views';
 
 import Word from './Word';
-import ChangeWordButtons from './ChangeWordButtons';
+import Lists from './Lists';
 import Settings from './Settings';
 
-const Content = () => (
+const Content = ({secectedIndex}) => (
   <div>
     <SwipeableViews
-      index={0}
+      index={secectedIndex}
     >
       <Word />
-      <ChangeWordButtons />
+      <Lists />
       <Settings />
     </SwipeableViews>
   </div>

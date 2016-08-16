@@ -6,8 +6,8 @@ const EMPTY_WORD = {
 	translation: ''
 };
 
-export default class Word extends React.Component {
-	
+class Word extends React.Component {
+
 	componentDidMount() {
 		const { store } = this.context;
 		this.unsubscribe = store.subscribe(() => this.forceUpdate());
@@ -23,6 +23,7 @@ export default class Word extends React.Component {
 		const word = this.getCurrentWord(state, store);
 		const allowDescription = state.settings.showDescription;
 		const allowTranslation = state.settings.showTranslation;
+		console.log(word);
 		return (
 			<div>
 				<div>{ word.title }</div>
@@ -48,3 +49,5 @@ export default class Word extends React.Component {
 Word.contextTypes = {
 	store: React.PropTypes.object
 };
+
+export default Word;

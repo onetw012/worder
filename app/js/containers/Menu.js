@@ -5,7 +5,6 @@ import { toggleTodo } from '../actions';
 import Menu from '../components/Menu';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state);
   let currentPath = state.routing.locationBeforeTransitions.pathname;
   return {
     secectedIndex: ((currentPath) => {

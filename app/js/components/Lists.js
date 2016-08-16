@@ -1,9 +1,24 @@
 import React from 'react';
+import Menu from './Menu';
+import Switcher from './Switcher';
 
-const Lists = () => (
-	<div>
-		Here are lists!
-	</div>
-);
+export default class Lists extends React.Component {
+	componentDidMount() {
+		const { store } = this.context;
+		this.unsubscribe = store.subscribe(() => this.forceUpdate());
+	}
 
-export default Lists;
+	componentWillUnmount() {
+		this.unsubscribe();
+	}
+
+	render() {
+		return (
+			<div>Lists isn't working</div>
+		)
+	}
+}
+
+Lists.contextTypes = {
+	store: React.PropTypes.object
+};
