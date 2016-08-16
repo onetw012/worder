@@ -1,30 +1,48 @@
 import React, {PropTypes} from 'react';
 import { Provider } from 'react-redux';
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, Route, Redirect, browserHistory } from 'react-router';
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 import '../../scss/main.scss';
 
-import Word from './Word';
-import ChangeWordButtons from './ChangeWordButtons';
-import Menu from './Menu';
-import Lists from './Lists';
-import Settings from './Settings';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 
-const WorderApp = () => (
-	<div>
-		<Menu />
-		<Word />
-		<ChangeWordButtons />
-	</div>
-);
+import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
-const Root = ({ store }) => (
-	<Provider store={ store }>
-		<Router history={ browserHistory }>
-			<Route path='/popup.html' component={ WorderApp } />
-			<Route path="lists" component={Lists} />
-			<Route path="settings" component={Settings} />
-		</Router>
-	</Provider>
-);
+import WorderAppContainer from '../containers/WorderApp';
+// import Lists from './Lists';
+// import Settings from './Settings';
+
+
+class Root extends React.Component {
+
+	constructor(props) {
+		super(props);
+		this.store = props.store;
+		this.history = syncHistoryWithStore(browserHistory, this.store);
+	}
+
+	getChildContext() {
+		return { muiTheme: getMuiTheme(baseTheme) };
+	}
+
+	render() {
+		const store = this.store;
+		return (
+			<Provider store={ store }>
+				<Router history={ this.history }>
+					<Route path="/" component={WorderAppContainer}>
+						<Redirect from="popup.html" to="/" />
+					</Route>
+				</Router>
+			</Provider>
+		);
+	}
+}
 
 export default Root;
+
+Root.childContextTypes = {
+  muiTheme: React.PropTypes.object.isRequired,
+};

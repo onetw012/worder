@@ -1,12 +1,13 @@
 import { createStore, combineReducers } from 'redux';
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 
 import { loadState, saveState } from './local-storage';
 
 /* REDUCERS */
-import { settings } from './reducers/settings';
-import { currentWord } from './reducers/current-word';
-import { currentList } from './reducers/current-list';
-import { lists } from './reducers/lists/lists';
+import { settings } from '../reducers/settings';
+import { currentWord } from '../reducers/current-word';
+import { currentList } from '../reducers/current-list';
+import { lists } from '../reducers/lists/lists';
 
 const DEFAULT_STATE = {
 	currentWord: 0,
@@ -44,7 +45,8 @@ export const configureStore = () => {
 		currentWord,
 		currentList,
 		lists,
-		settings
+		settings,
+		routing: routerReducer,
 	});
 	const store = createStore(worderApp, persistedState);
 	store.subscribe(() => {

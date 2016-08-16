@@ -9,3 +9,10 @@ export const incrementWordIndex = () => ({
 export const nullWordIndex = () => ({
 	type: 'NULL_WORD'
 });
+
+export const handleChange = (id) => {
+  return {
+    type: 'HANDLE_CHANGE',
+    id
+  }
+}

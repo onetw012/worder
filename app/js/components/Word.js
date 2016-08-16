@@ -7,6 +7,7 @@ const EMPTY_WORD = {
 };
 
 export default class Word extends React.Component {
+	
 	componentDidMount() {
 		const { store } = this.context;
 		this.unsubscribe = store.subscribe(() => this.forceUpdate());
