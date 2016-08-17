@@ -29,3 +29,10 @@ export const notifyAfter = (value) => ({
 	type: 'NOTIFY_AFTER',
 	value
 });
+
+/* MENU */
+
+export const setCurrentTab = (value) => ({
+	type: 'SET_CURRENT_TAB',
+	value
+});

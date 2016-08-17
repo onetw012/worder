@@ -1,18 +1,18 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { showWordInTimeout, notifyAfter } from '../actions';
-import Counter from './Counter';
+import Counter from '../components/Counter';
 
 const mapStateToProps = (state, ownProps) => {
     let label, value;
     switch (ownProps.type) {
         case 'SHOW_WORD_IN_TIMEOUT': {
-            label = 'Timeout';
+            label = 'Timeout (seconds)';
             value = state.settings.timeout;
             break;
         }
         case 'NOTIFY_AFTER': {
-            label = 'Notify after';
+            label = 'Notify after (minutes)';
             value = state.settings.showNotification;
             break;
         }

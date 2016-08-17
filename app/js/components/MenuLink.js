@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const MenuLink = ({ item }) => (
-	<Link 
+	<Link
 		to={ item === 'home' ? '/popup.html' : `/${item}` }
 	>
 		{ item }

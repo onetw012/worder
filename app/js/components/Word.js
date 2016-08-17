@@ -1,12 +1,15 @@
 import React from 'react';
 
+import ChangeWordButtons from './ChangeWordButtons';
+
 const EMPTY_WORD = {
 	title: '',
 	description: '',
 	translation: ''
 };
 
-export default class Word extends React.Component {
+class Word extends React.Component {
+
 	componentDidMount() {
 		const { store } = this.context;
 		this.unsubscribe = store.subscribe(() => this.forceUpdate());
@@ -23,10 +26,13 @@ export default class Word extends React.Component {
 		const allowDescription = state.settings.showDescription;
 		const allowTranslation = state.settings.showTranslation;
 		return (
-			<div>
-				<div>{ word.title }</div>
-				<div>{ allowTranslation ? word.translation : ''}</div>
-				<div>{ allowDescription ? word.description : ''}</div>
+			<div className="word-wrap">
+				<div>
+					<div>{ word.title }</div>
+					<div>{ allowTranslation ? word.translation : ''}</div>
+					<div>{ allowDescription ? word.description : ''}</div>
+				</div>
+				<ChangeWordButtons />
 			</div>
 		);
 	}
@@ -47,3 +53,5 @@ export default class Word extends React.Component {
 Word.contextTypes = {
 	store: React.PropTypes.object
 };
+
+export default Word;

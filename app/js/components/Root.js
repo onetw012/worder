@@ -1,30 +1,59 @@
 import React, {PropTypes} from 'react';
 import { Provider } from 'react-redux';
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, Route, Redirect, browserHistory } from 'react-router';
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 import '../../scss/main.scss';
 
-import Word from './Word';
-import ChangeWordButtons from './ChangeWordButtons';
-import Menu from './Menu';
-import Lists from './Lists';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
+
+import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
+
+import WorderAppContainer from '../containers/WorderApp';
+import CategoriesContainer from '../containers/Categories';
+import CategoryByIdContainer from '../containers/CategoryById';
+import NewCategory from './NewCategory';
 import Settings from './Settings';
+import Word from './Word';
+import AddWordToCategory from './AddWordToCategory';
+// import Lists from './Lists';
 
-const WorderApp = () => (
-	<div>
-		<Menu />
-		<Word />
-		<ChangeWordButtons />
-	</div>
-);
 
-const Root = ({ store }) => (
-	<Provider store={ store }>
-		<Router history={ browserHistory }>
-			<Route path='/popup.html' component={ WorderApp } />
-			<Route path="lists" component={Lists} />
-			<Route path="settings" component={Settings} />
-		</Router>
-	</Provider>
-);
+class Root extends React.Component {
+
+	constructor(props) {
+		super(props);
+		this.store = props.store;
+		this.history = syncHistoryWithStore(browserHistory, this.store);
+	}
+
+	getChildContext() {
+		return { muiTheme: getMuiTheme(baseTheme) };
+	}
+
+	render() {
+		const store = this.store;
+		return (
+			<Provider store={ store }>
+				<Router history={ this.history }>
+					<Route path="/" component={WorderAppContainer}>
+						<Route path="word" component={Word} />
+						<Route path="category/:categoryId" component={CategoryByIdContainer} />
+						<Route path="category/:categoryId/word" component={AddWordToCategory} />
+						<Route path="categories" component={CategoriesContainer} />
+						<Route path="newCategory" component={NewCategory} />
+						<Route path="settings" component={Settings} />
+						<Redirect from="popup.html" to="/word" />
+					</Route>
+				</Router>
+			</Provider>
+		);
+	}
+}
 
 export default Root;
+
+Root.childContextTypes = {
+  muiTheme: React.PropTypes.object.isRequired,
+};

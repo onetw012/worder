@@ -1,8 +1,28 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
 #root {
 	margin: 0;
-	width: 300px;
-	height: 100px;
+	width: 350px;
+	height: 450px;
+	overflow: hidden;
 	a {
 		padding: 0 10px;
 	}
+}
+
+.content {
+	padding: 5px;
+}
+.settings-wrap {
+	padding: 10px;
+}
+.categories-wrap {
+	padding: 1px;
+}
+.content-wrap {
+	height: 300px;
+	overflow: hidden;
 }

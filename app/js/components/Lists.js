@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Menu from './Menu';
 import Switcher from './Switcher';
 
@@ -12,7 +13,11 @@ export default class Lists extends React.Component {
 		this.unsubscribe();
 	}
 
-	render() {}
+	render() {
+		return (
+			<div>Lists isn't working</div>
+		)
+	}
 }
 
 Lists.contextTypes = {
