@@ -6,7 +6,7 @@ import { browserHistory } from 'react-router';
 
 import IcoContentAdd from 'material-ui/svg-icons/content/add';
 
-const ToolsOfCategories = () => (
+const CategoryTools = () => (
   <Paper zDepth={1}>
     <ListItem
       primaryText="Add new category"
@@ -16,4 +16,4 @@ const ToolsOfCategories = () => (
   </Paper>
 );
 
-export default ToolsOfCategories;
+export default CategoryTools;

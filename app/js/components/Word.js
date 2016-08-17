@@ -1,57 +1,23 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import ChangeWordButtons from './ChangeWordButtons';
 
-const EMPTY_WORD = {
-	title: '',
-	description: '',
-	translation: ''
-};
+const Word	= ({ title, translation, description }) => (
+	<div className="word-wrap">
+		<div>
+			<div>{ title }</div>
+			<div>{ translation }</div>
+			<div>{ description }</div>
+		</div>
+		<ChangeWordButtons />
+	</div>
+);
 
-class Word extends React.Component {
 
-	componentDidMount() {
-		const { store } = this.context;
-		this.unsubscribe = store.subscribe(() => this.forceUpdate());
-	}
-
-	componentWillUnmount() {
-		this.unsubscribe();
-	}
-
-	render() {
-		const { store } = this.context;
-		const state = store.getState();
-		const word = this.getCurrentWord(state, store);
-		const allowDescription = state.settings.showDescription;
-		const allowTranslation = state.settings.showTranslation;
-		return (
-			<div className="word-wrap">
-				<div>
-					<div>{ word.title }</div>
-					<div>{ allowTranslation ? word.translation : ''}</div>
-					<div>{ allowDescription ? word.description : ''}</div>
-				</div>
-				<ChangeWordButtons />
-			</div>
-		);
-	}
-
-	getCurrentWord(state) {
-		const currentListIndex = state.currentList;
-		const list = state.lists[currentListIndex];
-		let currentWordIndex;
-		if (list && Array.isArray(list.words)) {
-			currentWordIndex = state.currentWord;
-		}
-		return (currentWordIndex !== undefined && list.words[currentWordIndex]) ?
-			list.words[currentWordIndex] :
-			EMPTY_WORD;
-	}
+Word.propTypes = {
+  title: PropTypes.string.isRequired,
+  translation: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired
 }
-
-Word.contextTypes = {
-	store: React.PropTypes.object
-};
 
 export default Word;

@@ -5,18 +5,18 @@ import { loadState, saveState } from './local-storage';
 
 /* REDUCERS */
 import { settings } from '../reducers/settings';
-import { currentWord } from '../reducers/current-word';
-import { currentList } from '../reducers/current-list';
-import { lists } from '../reducers/lists/lists';
+import { currentWord } from '../reducers/words/current-word';
 import { categories } from '../reducers/categories';
 import { menu } from '../reducers/menu';
+import { words } from '../reducers/words/words';
+import { activeWords } from '../reducers/words/active-words';
 
 const DEFAULT_STATE = {
 	currentWord: 0,
-	currentList: 0,
 	menu: {
 		currentTab: 0
 	},
+	activeWords: [],
 	words: [{
 		id: 1,
 		title: 'One',
@@ -24,43 +24,26 @@ const DEFAULT_STATE = {
 		description: 'Number',
 		categoryId: 0
 	},{
-		id: 1,
-		title: 'One',
-		translation: 'Ein',
-		description: 'Number',
-		categoryId: 0
-	},
-	{
 		id: 2,
 		title: 'Two',
 		translation: 'Zwei',
 		description: 'Number',
 		categoryId: 1,
+	},{
+		id: 3,
+		title: 'Three',
+		translation: 'Drei',
+		description: 'Number',
+		categoryId: 1
 	}],
 	categories: [{
 		id: 0,
-		name: 'My list'
+		name: 'My list',
+		active: false
 	}, {
 		id: 1,
-		name: 'Your list'
-	}],
-	lists: [{
-		name: 'My list',
-		id: 1,
-		words: [
-			{
-				id: 1,
-				title: 'One',
-				translation: 'Ein',
-				description: 'Number'
-			},
-			{
-				id: 2,
-				title: 'Two',
-				translation: 'Zwei',
-				description: 'Number'
-			}
-		]
+		name: 'Your list',
+		active: false
 	}],
 	settings: {
 		timeout: 0,
@@ -72,12 +55,12 @@ const DEFAULT_STATE = {
 
 
 export const configureStore = () => {
-	const persistedState = loadState() || DEFAULT_STATE;
+	const persistedState = /*loadState() || */DEFAULT_STATE;
 	const worderApp = combineReducers({
 		currentWord,
-		currentList,
 		menu,
-		lists,
+		activeWords,
+		words,
 		categories,
 		settings,
 		routing: routerReducer,

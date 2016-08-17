@@ -8,12 +8,14 @@ const Counter = ({ label, value, onChange }) => (
 		type="text"
 		onChange={ (event) => {
 			const newValue = parseInt(event.target.value, 10);
-			return onChange(newValue);
+			if (!isNaN(newValue)) {
+				return onChange(newValue);
+			}
 		}}
 		value={ value }
 		floatingLabelText={label}
 		fullWidth={true}
-		/>
+	/>
 );
 
 Counter.propTypes = {

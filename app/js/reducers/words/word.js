@@ -3,9 +3,10 @@ export const word = (state = {}, action) => {
 		case 'ADD_WORD': {
 			return {
 				id: action.id,
-				title: action.title,
-				translation: action.translation,
-				description: action.description
+				title: action.title || '',
+				translation: action.translation || '',
+				description: action.description || '',
+				categoryId: action.categoryId || null
 			};
 		}
 		default: {

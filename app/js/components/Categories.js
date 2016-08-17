@@ -4,7 +4,7 @@ import {List} from 'material-ui/List';
 import Subheader from 'material-ui/Subheader';
 
 import Category from './Category';
-import ToolsOfCategories from './ToolsOfCategories'
+import CategoryTools from './CategoryTools'
 
 
 const Categories = ({categories}) => (
@@ -18,7 +18,7 @@ const Categories = ({categories}) => (
 					category={category}
 				/>
 			)}
-			<ToolsOfCategories />
+			<CategoryTools />
 		</List>
 	</div>
 )

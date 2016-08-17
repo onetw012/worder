@@ -3,7 +3,7 @@ import Categories from '../components/Categories';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    categories: state.categories
+    categories: state.categories || []
   };
 }
 

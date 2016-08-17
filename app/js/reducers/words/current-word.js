@@ -1,4 +1,4 @@
-import { words } from './lists/words/words';
+import { words } from './words';
 
 export const currentWord = (state = 0, action) => {
 	switch (action.type) {
