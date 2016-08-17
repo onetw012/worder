@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { toggleShowDescription, toggleShowTranslation } from '../actions';
-import Switcher from './Switcher';
+import Switcher from '../components/Switcher';
 
 const mapStateToProps = (state, ownProps) => {
     let label, checked;

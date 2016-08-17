@@ -1,17 +1,18 @@
 import React, { PropTypes } from 'react';
 
+import TextField from 'material-ui/TextField';
+
 const Counter = ({ label, value, onChange }) => (
-	<label>
-		{ label }
-		<input type="number"
-			onChange={ (event) => {
-				const newValue = parseInt(event.target.value, 10);
-				return onChange(newValue);
-			} }
-			value={ value }
-			min="0"
-		/>
-	</label>
+	<TextField
+		hintText="number"
+		type="text"
+		onChange={ (event) => {
+			const newValue = parseInt(event.target.value, 10);
+			return onChange(newValue);
+		} }
+		value={ value }
+		floatingLabelText={label}
+	/>
 );
 
 Counter.propTypes = {

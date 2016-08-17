@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ChangeWordButtons from './ChangeWordButtons';
+
 const EMPTY_WORD = {
 	title: '',
 	description: '',
@@ -25,9 +27,12 @@ class Word extends React.Component {
 		const allowTranslation = state.settings.showTranslation;
 		return (
 			<div>
-				<div>{ word.title }</div>
-				<div>{ allowTranslation ? word.translation : ''}</div>
-				<div>{ allowDescription ? word.description : ''}</div>
+				<div>
+					<div>{ word.title }</div>
+					<div>{ allowTranslation ? word.translation : ''}</div>
+					<div>{ allowDescription ? word.description : ''}</div>
+				</div>
+				<ChangeWordButtons />
 			</div>
 		);
 	}

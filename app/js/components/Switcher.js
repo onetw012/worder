@@ -1,13 +1,13 @@
 import React, { PropTypes } from 'react';
 
+import Toggle from 'material-ui/Toggle';
+
 const Switcher = ({ label, checked, onClick }) => (
-	<label>
-		{ label }
-		<input type="checkbox"
-			defaultChecked={ checked }
-			onClick={ () => { onClick(); } }
-		/>
-	</label>
+	<Toggle
+    label={label}
+		onToggle={ () => { onClick(); } }
+    defaultToggled={ checked }
+  />
 );
 
 

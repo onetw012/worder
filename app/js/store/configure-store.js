@@ -14,7 +14,7 @@ const DEFAULT_STATE = {
 	currentWord: 0,
 	currentList: 0,
 	menu: {
-		currentTab: 1
+		currentTab: 0
 	},
 	lists: [{
 		name: 'My list',

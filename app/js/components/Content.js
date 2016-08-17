@@ -11,9 +11,9 @@ const Content = ({currentTab}) => (
   >
     {(() => {
       switch (currentTab) {
-        case 0:   return (<Word />);
+        case 0:  return (<Word />);
         case 1: return (<Lists />);
-        case 2:  return (<Settings />);
+        case 2: return (<Settings />);
         default:      return (<Word />);
       }
     })()}
