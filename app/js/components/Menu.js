@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 import {Tabs, Tab} from 'material-ui/Tabs';
 import ActionHome from 'material-ui/svg-icons/action/home';
@@ -9,24 +9,28 @@ const iconStyles = {
   marginRight: 24,
 };
 
-const Menu = ({secectedIndex}) => (
+const Menu = ({currentTab, setCurrentTab}) => (
 	<Tabs
-  		initialSelectedIndex={secectedIndex}
-  		onChange={(e, r, t) => {console.log(e, r, t);}}
+  		initialSelectedIndex={currentTab}
+  		onChange={setCurrentTab}
     >
 		<Tab
-			value="/worder"
+			value={0}
 			icon={<ActionHome style={iconStyles} />}
 		/>
 		<Tab
-			value="/lists"
+			value={1}
 			icon={<ActionList style={iconStyles} />}
 		/>
 		<Tab
-			value="/settings"
+			value={2}
 			icon={<ActionSettings style={iconStyles} />}
 		/>
 	</Tabs>
 );
+
+Menu.propTypes = {
+  currentTab: PropTypes.number.isRequired,
+}
 
 export default Menu;

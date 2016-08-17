@@ -23,7 +23,6 @@ class Word extends React.Component {
 		const word = this.getCurrentWord(state, store);
 		const allowDescription = state.settings.showDescription;
 		const allowTranslation = state.settings.showTranslation;
-		console.log(word);
 		return (
 			<div>
 				<div>{ word.title }</div>

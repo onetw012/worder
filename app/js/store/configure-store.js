@@ -8,10 +8,14 @@ import { settings } from '../reducers/settings';
 import { currentWord } from '../reducers/current-word';
 import { currentList } from '../reducers/current-list';
 import { lists } from '../reducers/lists/lists';
+import { menu } from '../reducers/menu';
 
 const DEFAULT_STATE = {
 	currentWord: 0,
 	currentList: 0,
+	menu: {
+		currentTab: 1
+	},
 	lists: [{
 		name: 'My list',
 		id: 1,
@@ -44,6 +48,7 @@ export const configureStore = () => {
 	const worderApp = combineReducers({
 		currentWord,
 		currentList,
+		menu,
 		lists,
 		settings,
 		routing: routerReducer,

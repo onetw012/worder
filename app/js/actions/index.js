@@ -30,9 +30,9 @@ export const notifyAfter = (value) => ({
 	value
 });
 
-export const handleChange = (id) => {
-  return {
-    type: 'HANDLE_CHANGE',
-    id
-  }
-}
+/* MENU */
+
+export const setCurrentTab = (value) => ({
+	type: 'SET_CURRENT_TAB',
+	value
+});

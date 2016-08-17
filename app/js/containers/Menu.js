@@ -1,34 +1,19 @@
 import {
   connect
 } from 'react-redux';
-import { toggleTodo } from '../actions';
+import { setCurrentTab } from '../actions';
 import Menu from '../components/Menu';
 
 const mapStateToProps = (state, ownProps) => {
-  let currentPath = state.routing.locationBeforeTransitions.pathname;
   return {
-    secectedIndex: ((currentPath) => {
-      switch (currentPath) {
-        case 'worder':
-          return 0
-          break;
-        case 'lists':
-          return 1
-          break;
-        case 'settings':
-          return 2
-          break;
-        default:
-          return 0
-      }
-    })(currentPath)
+    currentTab: state.menu.currentTab
   };
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    handleChange: (id) => {
-      dispatch(handleChange(id))
+    setCurrentTab: (id) => {
+      dispatch(setCurrentTab(id))
     }
   };
 }

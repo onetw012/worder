@@ -10,7 +10,7 @@
     "default_popup": "popup.html"
   },
   "permissions": [
-    "http://fonts.googleapis.com/",
-    "https://fonts.googleapis.com/"
+    "http://fonts.googleapis.com",
+    "https://fonts.googleapis.com"
   ]
 }
