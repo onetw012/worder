@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { browserHistory } from 'react-router';
 
 import {Tabs, Tab} from 'material-ui/Tabs';
 import ActionHome from 'material-ui/svg-icons/action/home';
@@ -9,10 +10,12 @@ const iconStyles = {
   marginRight: 24,
 };
 
+const path = ["word", "categories", "settings"];
+
 const Menu = ({currentTab, setCurrentTab}) => (
 	<Tabs
   		initialSelectedIndex={currentTab}
-  		onChange={setCurrentTab}
+  		onChange={(value) => { setCurrentTab(value); browserHistory.push(path[value]); } }
     >
 		<Tab
 			value={0}
@@ -31,6 +34,7 @@ const Menu = ({currentTab, setCurrentTab}) => (
 
 Menu.propTypes = {
   currentTab: PropTypes.number.isRequired,
+  setCurrentTab: PropTypes.func.isRequired,
 }
 
 export default Menu;

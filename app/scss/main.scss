@@ -5,8 +5,9 @@ body {
 
 #root {
 	margin: 0;
-	width: 200px;
-	height: 200px;
+	width: 350px;
+	height: 450px;
+	overflow: hidden;
 	a {
 		padding: 0 10px;
 	}
@@ -14,9 +15,14 @@ body {
 
 .content {
 	padding: 5px;
-	font-size: 13px;
 }
 .settings-wrap {
 	padding: 10px;
-	overflow-x: hidden;
+}
+.categories-wrap {
+	padding: 1px;
+}
+.content-wrap {
+	height: 300px;
+	overflow: hidden;
 }

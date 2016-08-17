@@ -1,9 +1,9 @@
 import {connect} from 'react-redux';
-import Content from '../components/Content.js';
+import Categories from '../components/Categories';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    currentTab: state.menu.currentTab
+    categories: state.categories
   };
 }
 
@@ -11,9 +11,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {};
 }
 
-const ContentContainer = connect(
+const CategoriesContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Content)
+)(Categories)
 
-export default ContentContainer;
+export default CategoriesContainer;

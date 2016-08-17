@@ -1,12 +1,13 @@
 import React from 'react';
 
 import Menu from '../containers/Menu';
-import Content from '../containers/Content';
 
-const WorderApp = () => (
+const WorderApp = ({children}) => (
   <div>
     <Menu />
-    <Content />
+    <div className="content">
+      {children}
+    </div>
   </div>
 );
 

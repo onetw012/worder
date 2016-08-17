@@ -12,6 +12,7 @@ const Counter = ({ label, value, onChange }) => (
 		} }
 		value={ value }
 		floatingLabelText={label}
+		fullWidth={true}
 	/>
 );
 

@@ -26,7 +26,7 @@ class Word extends React.Component {
 		const allowDescription = state.settings.showDescription;
 		const allowTranslation = state.settings.showTranslation;
 		return (
-			<div>
+			<div className="word-wrap">
 				<div>
 					<div>{ word.title }</div>
 					<div>{ allowTranslation ? word.translation : ''}</div>

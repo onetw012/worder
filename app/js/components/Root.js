@@ -11,8 +11,12 @@ import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
 import WorderAppContainer from '../containers/WorderApp';
+import CategoriesContainer from '../containers/Categories';
+import CategoryById from './CategoryById';
+import NewCategory from './NewCategory';
+import Settings from './Settings';
+import Word from './Word';
 // import Lists from './Lists';
-// import Settings from './Settings';
 
 
 class Root extends React.Component {
@@ -33,7 +37,12 @@ class Root extends React.Component {
 			<Provider store={ store }>
 				<Router history={ this.history }>
 					<Route path="/" component={WorderAppContainer}>
-						<Redirect from="popup.html" to="/" />
+						<Route path="word" component={Word} />
+						<Route path="category/:categoryId" component={CategoryById} />
+						<Route path="categories" component={CategoriesContainer} />
+						<Route path="newCategory" component={NewCategory} />
+						<Route path="settings" component={Settings} />
+						<Redirect from="popup.html" to="/word" />
 					</Route>
 				</Router>
 			</Provider>
