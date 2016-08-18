@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 
-import CategoryById from '../components/CategoryById';
+import EditCategory from '../components/EditCategory';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -12,9 +12,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {};
 }
 
-const CategoryByIdContainer = connect(
+const EditCategoryContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(CategoryById)
+)(EditCategory)
 
-export default CategoryByIdContainer;
+export default EditCategoryContainer;
