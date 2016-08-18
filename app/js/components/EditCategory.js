@@ -2,30 +2,39 @@ import React, { PropTypes } from 'react';
 import { Link, browserHistory } from 'react-router';
 
 import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
+import FloatingActionButton from 'material-ui/FloatingActionButton'
 import IcoArrowBack from 'material-ui/svg-icons/navigation/arrow-back';
+import IcoContentAdd from 'material-ui/svg-icons/content/add';
 
-const CategoryById = ({categoryById}) => (
+import WordsList from './WordsList';
+import BackButton from './BackButton';
+
+
+const CategoryById = ({categoryById, wordsList}) => (
   <div>
-    <Link to="categories">
-      <IcoArrowBack />
-    </Link>
+    <BackButton
+      to="/categories" />
     <div>
       <TextField
         hintText="Category name"
         defaultValue={categoryById.name}
         floatingLabelText="Category name"
         fullWidth={true} />
-      <RaisedButton
-        label="Add word"
-        primary={true}
-        onClick={ () => {browserHistory.push('category/' + categoryById.id + '/word')} } />
+      <WordsList
+        wordsList={wordsList} />
+      <FloatingActionButton
+        className="bar-right"
+        mini={true}
+        onClick={ () => {browserHistory.push('category/' + categoryById.id + '/word')} } >
+        <IcoContentAdd />
+      </FloatingActionButton>
     </div>
   </div>
 );
 
 CategoryById.propTypes = {
-  categoryById: PropTypes.object,
+  categoryById: PropTypes.object.isRequired,
+  wordsList: PropTypes.array.isRequired,
 }
 
 export default CategoryById;

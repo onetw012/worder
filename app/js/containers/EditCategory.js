@@ -3,8 +3,10 @@ import {connect} from 'react-redux';
 import EditCategory from '../components/EditCategory';
 
 const mapStateToProps = (state, ownProps) => {
+  let categoryId = ownProps.params.categoryId;
   return {
-    categoryById: state.categories.find((category) => category.id == ownProps.params.categoryId)
+    categoryById: state.categories.find((category) => category.id == categoryId),
+    wordsList: state.words.filter((word) => word.categoryId == categoryId)
   };
 }
 
