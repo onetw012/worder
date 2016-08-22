@@ -8,16 +8,15 @@ import IcoContentAdd from 'material-ui/svg-icons/content/add';
 import Subheader from 'material-ui/Subheader';
 
 import BackButton from './BackButton';
+import NewCategoryInputText from '../containers/NewCategoryInputText';
 
 const NewCategory = () => (
   <div className="newcategory-wrap">
     <BackButton
       to="/categories" />
     <Subheader>New category:</Subheader>
-    <TextField
-      hintText="Name category"
-      floatingLabelText="Name category"
-    />
+    <NewCategoryInputText
+      type="SET_NAME" />
     <RaisedButton
       label="Add category"
       primary={true}

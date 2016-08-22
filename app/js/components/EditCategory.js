@@ -8,6 +8,7 @@ import IcoContentAdd from 'material-ui/svg-icons/content/add';
 
 import WordsList from './WordsList';
 import BackButton from './BackButton';
+import CategoryInputTextContainer from '../containers/CategoryInputText';
 
 
 const CategoryById = ({categoryById, wordsList}) => (
@@ -15,10 +16,10 @@ const CategoryById = ({categoryById, wordsList}) => (
     <BackButton
       to="/categories" />
     <div>
-      <TextField
-        hintText="Category name"
+      <CategoryInputTextContainer
+        id={categoryById.id}
+        type="CATEGORY_NAME"
         defaultValue={categoryById.name}
-        floatingLabelText="Category name"
         fullWidth={true} />
       <WordsList
         wordsList={wordsList} />

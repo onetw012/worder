@@ -7,6 +7,7 @@ import { loadState, saveState } from './local-storage';
 import { settings } from '../reducers/settings';
 import { currentWord } from '../reducers/words/current-word';
 import { categories } from '../reducers/categories';
+import { newCategory } from '../reducers/newCategory';
 import { menu } from '../reducers/menu';
 import { words } from '../reducers/words/words';
 import { activeWords } from '../reducers/words/active-words';
@@ -36,6 +37,10 @@ const DEFAULT_STATE = {
 		description: 'Number',
 		categoryId: 1
 	}],
+	newCategory: {
+		name: 'New category',
+		active: false,
+	},
 	categories: [{
 		id: 0,
 		name: 'My list',
@@ -61,6 +66,7 @@ export const configureStore = () => {
 		menu,
 		activeWords,
 		words,
+		newCategory,
 		categories,
 		settings,
 		routing: routerReducer,
