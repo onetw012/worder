@@ -10,6 +10,14 @@ export const categories = (state = {}, action) => {
 				}),
 			];
 		}
+		case 'NEW_CATEGORY': {
+			const newCategory = action.value;
+			state.push({
+				...newCategory,
+				id: new Date().getTime(),
+			});
+			return state;
+		}
 		default: {
 			return state;
 		}

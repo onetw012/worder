@@ -38,7 +38,7 @@ const DEFAULT_STATE = {
 		categoryId: 1
 	}],
 	newCategory: {
-		name: 'New category',
+		name: '',
 		active: false,
 	},
 	categories: [{

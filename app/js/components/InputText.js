@@ -6,12 +6,7 @@ const InputText = ({floatingLabelText, defaultValue, onChange, hintText, fullWid
 	<TextField
 		hintText={hintText}
 		type="text"
-		onChange={ (event) => {
-			const newValue = event.target.value;
-			if(newValue !== '') {
-				return onChange(newValue, id);
-			}
-		}}
+		onChange={ (event) => onChange(event.target.value, id) }
 		defaultValue={ defaultValue }
 		floatingLabelText={ floatingLabelText }
 		fullWidth={fullWidth}

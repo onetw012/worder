@@ -47,6 +47,11 @@ export const setCategoryName = (value, id) => ({
 	id
 });
 
+export const newCategory = (value) => ({
+	type: 'NEW_CATEGORY',
+	value,
+});
+
 
 /* New Category */
 

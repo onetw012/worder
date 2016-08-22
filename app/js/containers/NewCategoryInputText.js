@@ -19,6 +19,7 @@ const mapStateToProps = (state, ownProps) => {
       {
         hintText = 'Name of new category';
         floatingLabelText = 'Name';
+        defaultValue = state.newCategory.name;
         break;
       }
   }
