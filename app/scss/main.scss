@@ -16,13 +16,21 @@ body {
 .content {
 	padding: 5px;
 }
+
 .settings-wrap {
 	padding: 10px;
 }
+
 .categories-wrap {
 	padding: 1px;
 }
-.content-wrap {
-	height: 300px;
-	overflow: hidden;
+
+.bar-right {
+	float: right;
+	margin-top: 15px;
+	margin-right: 9px;
+}
+
+.back-button {
+	cursor: pointer;
 }

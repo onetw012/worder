@@ -36,3 +36,26 @@ export const setCurrentTab = (value) => ({
 	type: 'SET_CURRENT_TAB',
 	value
 });
+
+
+
+/* Category */
+
+export const setCategoryName = (value, id) => ({
+	type: 'SET_CATEGORY_NAME',
+	value,
+	id
+});
+
+export const newCategory = (value) => ({
+	type: 'NEW_CATEGORY',
+	value,
+});
+
+
+/* New Category */
+
+export const setNewCategoryName = (value, id) => ({
+	type: 'SET_NAME',
+	value,
+});
