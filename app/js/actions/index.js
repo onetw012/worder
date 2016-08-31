@@ -59,3 +59,11 @@ export const setNewCategoryName = (value, id) => ({
 	type: 'SET_NAME',
 	value,
 });
+
+
+/* New word */
+
+export const newWord = (data) => ({
+	type: 'NEW_WORD',
+	data,
+});

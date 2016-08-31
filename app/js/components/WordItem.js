@@ -11,6 +11,7 @@ const WordItem = ({ word }) => (
     key={word.id}
     primaryText={word.title}
     rightIcon={<IcoModeEdit />}
+    onClick={ () => {browserHistory.push('category/' + word.categoryId + '/word/' + word.id)} }
   />
 );
 
