@@ -1,18 +1,15 @@
-import React, {
-  PropTypes
-} from 'react';
-import {
-  connect
-} from 'react-redux';
+import React, {PropTypes} from 'react';
+import {connect} from 'react-redux';
 
-import {
-  newCategory
-} from '../actions';
-
+import {newCategory} from '../actions';
 import RaisedButton from '../components/RaisedButton';
 
 const mapStateToProps = (state, ownProps) => {
-  let label, primary, icon, disabled, stateNewCategory;
+  let label,
+    primary,
+    icon,
+    disabled,
+    stateNewCategory;
 
   primary = ownProps.primary || false;
   disabled = ownProps.disabled;
@@ -27,13 +24,7 @@ const mapStateToProps = (state, ownProps) => {
         break;
       }
   }
-  return {
-    label,
-    primary,
-    icon,
-    disabled,
-    stateNewCategory
-  };
+  return {label, primary, icon, disabled, stateNewCategory};
 }
 
 const mapDispatchToProps = (dispatch, ownProps, dispatchProps) => {
@@ -60,16 +51,10 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
     disabled: stateProps.stateNewCategory.name == '',
     onClick: () => {
       dispatchProps.onClick(stateProps.stateNewCategory);
-    },
+    }
   }
 }
 
-
-const NewCategoryButton = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-  mergeProps
-)(RaisedButton);
-
+const NewCategoryButton = connect(mapStateToProps, mapDispatchToProps, mergeProps)(RaisedButton);
 
 export default NewCategoryButton;
