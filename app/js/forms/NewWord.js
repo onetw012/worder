@@ -20,7 +20,7 @@ const NewWordForm = ({handleSubmit, pristine, reset, submitting}) => (
 const NewWordReduxForm = reduxForm({
   validate: validate(requiredFields),
   form: 'contact',
-  fields: ['title', 'translation', 'description', 'categoryId']
+  fields: ['title', 'translation', 'description']
 })(NewWordForm)
 
 export default NewWordReduxForm;

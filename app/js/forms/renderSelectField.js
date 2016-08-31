@@ -1,7 +1,7 @@
 import React from 'react';
 import SelectField from 'material-ui/SelectField';
 
-const renderSelectField = ({ input, label, meta: { touched, error } }) => (
+const renderSelectField = ({ input, label, children, meta: { touched, error } }) => (
   <SelectField
     floatingLabelText={label}
     errorText={touched && error}
