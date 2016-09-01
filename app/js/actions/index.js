@@ -67,3 +67,8 @@ export const newWord = (data) => ({
 	type: 'NEW_WORD',
 	data,
 });
+
+export const editWord = (data) => ({
+	type: 'EDIT_WORD',
+	data,
+});

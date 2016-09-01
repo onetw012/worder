@@ -24,7 +24,7 @@ const DEFAULT_STATE = {
 		title: 'One',
 		translation: 'Ein',
 		description: 'Number',
-		categoryId: 0
+		categoryId: 1
 	},{
 		id: 2,
 		title: 'Two',
@@ -43,11 +43,11 @@ const DEFAULT_STATE = {
 		active: false,
 	},
 	categories: [{
-		id: 0,
+		id: 1,
 		name: 'My list',
 		active: false
 	}, {
-		id: 1,
+		id: 2,
 		name: 'Your list',
 		active: false
 	}],

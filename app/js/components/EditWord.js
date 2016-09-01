@@ -4,14 +4,16 @@ import Subheader from 'material-ui/Subheader';
 import EditWordFormContainer from '../containers/EditWordForm';
 import TopTitle from './TopTitle';
 
-const EditWord = ({params, onEditWord, currentWord}) => (
+const EditWord = ({params, onEditWord, currentWord, categoryList}) => (
   <div>
     <TopTitle title="Edit word:" backUrl={'category/' + params.categoryId}/>
-    <EditWordFormContainer onSubmit={onEditWord} currentWord={currentWord} />
+    <EditWordFormContainer onSubmit={onEditWord} currentWord={currentWord} categoryList={categoryList}/>
   </div>
 )
 
 EditWord.propTypes = {
+  currentWord: PropTypes.object.isRequired,
+  categoryList: PropTypes.array.isRequired,
   params: PropTypes.object.isRequired,
   onEditWord: PropTypes.func.isRequired
 }
