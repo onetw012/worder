@@ -1,6 +1,7 @@
 import React, {PropTypes} from 'react';
 import MenuItem from 'material-ui/MenuItem'
 import RaisedButton from 'material-ui/RaisedButton';
+import FlatButton from 'material-ui/FlatButton';
 import {Field} from 'redux-form';
 
 import renderTextField from './renderTextField';
@@ -19,7 +20,7 @@ const EditWordForm = ({handleSubmit, pristine, submitting, initialValues, catego
       {categoryListItem(categoryList)}
     </Field>
     <RaisedButton label="Save" disabled={pristine || submitting} primary type="submit" onClick={() => {}}/>
-    <RaisedButton label="Remove" primary type="button" onClick={() => onRemove(initialValues.id)}/>
+    <FlatButton label="Remove" secondary type="button" onClick={() => onRemove(initialValues.id)}/>
   </form>
 )
 
