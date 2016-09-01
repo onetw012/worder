@@ -3,11 +3,11 @@ import Subheader from 'material-ui/Subheader';
 
 import BackButton from './BackButton';
 import NewWordReduxForm from '../forms/NewWord';
+import TopTitle from './TopTitle';
 
 const NewWord = ({onSubmitForm, params}) => (
   <div>
-    <BackButton to={"/category/" + params.categoryId}/>
-    <Subheader>New word:</Subheader>
+    <TopTitle title="New word:" backUrl={"/category/" + params.categoryId}/>
     <NewWordReduxForm onSubmit={onSubmitForm}/>
   </div>
 )

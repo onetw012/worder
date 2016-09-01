@@ -3,7 +3,7 @@ import TextField from 'material-ui/TextField';
 
 
 const renderTextField = ({ input, label, placeholder, startValue, meta: { touched, error }, ...custom }) => (
-  <div>
+  <div className="render-text-field">
     <TextField
       hintText={placeholder}
       floatingLabelText={label}

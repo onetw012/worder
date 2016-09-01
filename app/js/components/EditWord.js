@@ -1,13 +1,12 @@
 import React, {PropTypes} from 'react';
 import Subheader from 'material-ui/Subheader';
 
-import BackButton from './BackButton';
 import EditWordFormContainer from '../containers/EditWordForm';
+import TopTitle from './TopTitle';
 
 const EditWord = ({params, onEditWord, currentWord}) => (
   <div>
-    <BackButton to={'category/' + params.categoryId}/>
-    <Subheader>Edit word:</Subheader>
+    <TopTitle title="Edit word:" backUrl={'category/' + params.categoryId}/>
     <EditWordFormContainer onSubmit={onEditWord} currentWord={currentWord} />
   </div>
 )

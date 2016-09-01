@@ -8,17 +8,14 @@ body {
 	width: 350px;
 	height: 450px;
 	overflow: hidden;
+
 	a {
 		padding: 0 10px;
 	}
 }
 
 .content {
-	padding: 5px;
-}
-
-.settings-wrap {
-	padding: 10px;
+	padding: 0 15px 15px 15px;
 }
 
 .categories-wrap {
@@ -33,4 +30,17 @@ body {
 
 .back-button {
 	cursor: pointer;
+}
+
+.top-title-group {
+	margin-left: -15px;
+}
+
+.top-title-box {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.render-text-field {
+	height: 75px;
 }
