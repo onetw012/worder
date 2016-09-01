@@ -21,6 +21,14 @@ export const words = (state = [], action) => {
           return word;
         });
       }
+    case 'REMOVE_WORD':
+      {
+        return state.forEach((word, index, array) => {
+          if (word.id == action.wordId)
+            array.splice(index, 1);
+          }
+        )
+      }
     default:
       {
         return state;

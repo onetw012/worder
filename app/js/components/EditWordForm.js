@@ -10,7 +10,7 @@ export const categoryListItem = (categoryList) => {
   return categoryList.map((categoryData) => (<MenuItem key={categoryData.id} value={categoryData.id} primaryText={categoryData.name}/>))
 }
 
-const EditWordForm = ({handleSubmit, pristine, submitting, categoryList}) => (
+const EditWordForm = ({handleSubmit, pristine, submitting, initialValues, categoryList, onRemove}) => (
   <form onSubmit={handleSubmit}>
     <Field name="title" component={renderTextField} label="Title" placeholder="Title" required/>
     <Field name="translation" component={renderTextField} label="Translation" placeholder="Translation" required/>
@@ -19,10 +19,12 @@ const EditWordForm = ({handleSubmit, pristine, submitting, categoryList}) => (
       {categoryListItem(categoryList)}
     </Field>
     <RaisedButton label="Save" disabled={pristine || submitting} primary type="submit" onClick={() => {}}/>
+    <RaisedButton label="Remove" primary type="button" onClick={() => onRemove(initialValues.id)}/>
   </form>
 )
 
 EditWordForm.propTypes = {
+  onRemove: PropTypes.func.isRequired,
   categoryList: PropTypes.array.isRequired,
   initialValues: PropTypes.object.isRequired,
   handleSubmit: PropTypes.func.isRequired,

@@ -72,3 +72,9 @@ export const editWord = (data) => ({
 	type: 'EDIT_WORD',
 	data,
 });
+
+
+export const removeWord = (wordId) => ({
+	type: 'REMOVE_WORD',
+	wordId,
+});
