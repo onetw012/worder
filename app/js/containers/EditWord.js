@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     onEditWord: (data) => {
       dispatch(editWord({
         ...data,
-        id: ownProps.params.wordId
+        id: parseInt(ownProps.params.wordId)
       }));
     }
   };

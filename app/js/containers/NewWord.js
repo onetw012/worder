@@ -24,7 +24,7 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
     onSubmitForm: (formData) => {
       dispatchProps.onSubmitForm({
         ...formData,
-        categoryId: stateProps.params.categoryId
+        categoryId: parseInt(stateProps.params.categoryId)
       });
     }
   }

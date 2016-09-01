@@ -5,6 +5,8 @@ const mapStateToProps = (state, ownProps) => {
   const word = state.words[state.currentWord] || {};
   return {
     title: word.title,
+    showTranslation: state.settings.showTranslation,
+    showDescription: state.settings.showDescription,
     translation: (state.settings.showTranslation ? word.translation : ''),
     description: (state.settings.showDescription ? word.description : ''),
   };
