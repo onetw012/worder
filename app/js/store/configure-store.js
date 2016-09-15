@@ -1,5 +1,6 @@
 import { createStore, combineReducers } from 'redux';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
+import {reducer as formReducer} from 'redux-form';
 
 import { loadState, saveState } from './local-storage';
 
@@ -23,7 +24,7 @@ const DEFAULT_STATE = {
 		title: 'One',
 		translation: 'Ein',
 		description: 'Number',
-		categoryId: 0
+		categoryId: 1
 	},{
 		id: 2,
 		title: 'Two',
@@ -42,11 +43,11 @@ const DEFAULT_STATE = {
 		active: false,
 	},
 	categories: [{
-		id: 0,
+		id: 1,
 		name: 'My list',
 		active: false
 	}, {
-		id: 1,
+		id: 2,
 		name: 'Your list',
 		active: false
 	}],
@@ -61,7 +62,7 @@ const DEFAULT_STATE = {
 
 export const configureStore = () => {
 	const persistedState = loadState() || DEFAULT_STATE;
-	const worderApp = combineReducers({
+	const reducers = combineReducers({
 		currentWord,
 		menu,
 		activeWords,
@@ -69,9 +70,11 @@ export const configureStore = () => {
 		newCategory,
 		categories,
 		settings,
+		form: formReducer,
 		routing: routerReducer,
 	});
-	const store = createStore(worderApp, persistedState);
+	const store = createStore(reducers, persistedState);
+
 	store.subscribe(() => {
 		saveState(store.getState());
 	});

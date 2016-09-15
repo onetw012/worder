@@ -1,12 +1,12 @@
 export const word = (state = {}, action) => {
 	switch (action.type) {
-		case 'ADD_WORD': {
+		case 'NEW_WORD': {
 			return {
-				id: action.id,
-				title: action.title || '',
-				translation: action.translation || '',
-				description: action.description || '',
-				categoryId: action.categoryId || null
+				id: action.data.id || new Date().getTime(),
+				title: action.data.title || '',
+				translation: action.data.translation || '',
+				description: action.data.description || '',
+				categoryId: action.data.categoryId || null
 			};
 		}
 		default: {

@@ -1,12 +1,10 @@
-import React, { PropTypes } from 'react';
+import React, {PropTypes} from 'react';
 
-const Button = ({ text, onClick }) => (
-	<button 
-		onClick={ () => { onClick(); } }
-	>
-		{ text }
-	</button>
-);
+import FlatButton from 'material-ui/FlatButton';
+
+const Button = ({text, onClick}) => (<FlatButton primary label={text} onClick={() => {
+  onClick();
+}}/>);
 
 Button.propTypes = {
   text: PropTypes.string.isRequired,

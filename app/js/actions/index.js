@@ -59,3 +59,22 @@ export const setNewCategoryName = (value, id) => ({
 	type: 'SET_NAME',
 	value,
 });
+
+
+/* New word */
+
+export const newWord = (data) => ({
+	type: 'NEW_WORD',
+	data,
+});
+
+export const editWord = (data) => ({
+	type: 'EDIT_WORD',
+	data,
+});
+
+
+export const removeWord = (wordId) => ({
+	type: 'REMOVE_WORD',
+	wordId,
+});

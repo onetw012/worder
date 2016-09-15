@@ -1,14 +1,20 @@
-import React, { PropTypes } from 'react';
+import React, {PropTypes} from 'react';
+import Subheader from 'material-ui/Subheader';
 
 import BackButton from './BackButton';
+import NewWordReduxForm from '../forms/NewWord';
+import TopTitle from './TopTitle';
 
-
-const AddWordToCategory = ({params}) => (
+const NewWord = ({onSubmitForm, params}) => (
   <div>
-    <BackButton
-      to={"/category/" + params.categoryId } />
-    Add word to category id: {params.categoryId}
+    <TopTitle title="New word:" backUrl={"/category/" + params.categoryId}/>
+    <NewWordReduxForm onSubmit={onSubmitForm}/>
   </div>
 )
 
-export default AddWordToCategory;
+NewWord.propTypes = {
+  params: PropTypes.object.isRequired,
+  onSubmitForm: PropTypes.func.isRequired
+}
+
+export default NewWord;
