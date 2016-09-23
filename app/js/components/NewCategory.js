@@ -6,8 +6,8 @@ import IcoContentAdd from 'material-ui/svg-icons/content/add';
 import Subheader from 'material-ui/Subheader';
 
 import BackButton from './BackButton';
-import NewCategoryInputText from '../containers/NewCategoryInputText';
-import NewCategoryButton from '../containers/NewCategoryButton';
+import NewCategoryInputText from '../containers/Category/NewCategoryInputText';
+import NewCategoryButton from '../containers/Category/NewCategoryButton';
 import TopTitle from './TopTitle';
 
 const NewCategory = () => (

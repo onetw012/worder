@@ -11,13 +11,13 @@ import baseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
 import WorderAppContainer from '../containers/WorderApp';
-import CategoriesContainer from '../containers/Categories';
-import EditCategoryContainer from '../containers/EditCategory';
-import WordContainer from '../containers/Word';
+import CategoriesContainer from '../containers/Category/Categories';
+import EditCategoryContainer from '../containers/Category/EditCategory';
 import NewCategory from './NewCategory';
 import Settings from './Settings';
-import NewWordContainer from '../containers/NewWord';
-import EditWordContainer from '../containers/EditWord';
+import WordContainer from '../containers/Word/Word';
+import NewWordContainer from '../containers/Word/NewWord';
+import EditWordContainer from '../containers/Word/EditWord';
 // import Lists from './Lists';
 
 class Root extends React.Component {

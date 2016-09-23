@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import Subheader from 'material-ui/Subheader';
 
-import EditWordFormContainer from '../containers/EditWordForm';
+import EditWordFormContainer from '../containers/Word/EditWordForm';
 import TopTitle from './TopTitle';
 
 const EditWord = ({params, onEditWord, currentWord, categoryList}) => (

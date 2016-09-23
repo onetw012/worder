@@ -1,8 +1,9 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
+import {browserHistory} from 'react-router';
 
-import {newCategory} from '../actions';
-import RaisedButton from '../components/RaisedButton';
+import {newCategory} from '../../actions';
+import RaisedButton from '../../components/RaisedButton';
 
 const mapStateToProps = (state, ownProps) => {
   let label,
@@ -39,6 +40,7 @@ const mapDispatchToProps = (dispatch, ownProps, dispatchProps) => {
   return {
     onClick: (value) => {
       dispatch(fn(value));
+      browserHistory.push('categories');
     }
   }
 };

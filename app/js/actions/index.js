@@ -1,10 +1,12 @@
 /* CHANGE WORD */
-export const decrementWordIndex = () => ({
-	type: 'DECREMENT_WORD'
+export const decrementWordIndex = (activeWordsLength) => ({
+	type: 'DECREMENT_WORD',
+	activeWordsLength
 });
 
-export const incrementWordIndex = () => ({
-	type: 'INCREMENT_WORD'
+export const incrementWordIndex = (activeWordsLength) => ({
+	type: 'INCREMENT_WORD',
+	activeWordsLength
 });
 
 export const nullWordIndex = () => ({
@@ -39,7 +41,7 @@ export const setCurrentTab = (value) => ({
 
 
 
-/* Category */
+/* CATEGORY */
 
 export const setCategoryName = (value, id) => ({
 	type: 'SET_CATEGORY_NAME',
@@ -52,16 +54,18 @@ export const newCategory = (value) => ({
 	value,
 });
 
-
-/* New Category */
-
 export const setNewCategoryName = (value, id) => ({
 	type: 'SET_NAME',
 	value,
 });
 
+export const removeCategory = (id) => ({
+	type: 'REMOVE_CATEGORY',
+	id
+});
 
-/* New word */
+
+/* WORD */
 
 export const newWord = (data) => ({
 	type: 'NEW_WORD',
@@ -77,4 +81,9 @@ export const editWord = (data) => ({
 export const removeWord = (wordId) => ({
 	type: 'REMOVE_WORD',
 	wordId,
+});
+
+export const removeWordsByCategoryId = (categoryId) => ({
+	type: 'REMOVE_WORDS_BY_CATEGORY',
+	categoryId
 });

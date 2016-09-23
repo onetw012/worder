@@ -1,8 +1,8 @@
 import {connect} from 'react-redux';
 import {reduxForm} from 'redux-form';
 
-import {newWord} from '../actions';
-import NewWord from '../components/NewWord';
+import {newWord} from '../../actions';
+import NewWord from '../../components/NewWord';
 
 const mapStateToProps = (state, ownProps) => {
   return {

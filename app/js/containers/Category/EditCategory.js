@@ -1,6 +1,7 @@
 import {connect} from 'react-redux';
 
-import EditCategory from '../components/EditCategory';
+import EditCategory from '../../components/EditCategory';
+import {removeCategory, removeWordsByCategoryId, nullWordIndex} from '../../actions';
 
 const mapStateToProps = (state, ownProps) => {
   let categoryId = ownProps.params.categoryId;
@@ -11,7 +12,14 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  return {};
+  return {
+  	onRemove: () => {
+  		const categoryId = ownProps.params.categoryId;
+  		dispatch(removeCategory(categoryId));
+  		dispatch(removeWordsByCategoryId(categoryId));
+  		dispatch(nullWordIndex());
+  	}
+  };
 }
 
 const EditCategoryContainer = connect(

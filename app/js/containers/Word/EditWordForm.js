@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 
-import {removeWord} from '../actions';
-import EditWordReduxForm from '../forms/EditWord';
+import {removeWord} from '../../actions';
+import EditWordReduxForm from '../../forms/EditWord';
 
 const mapStateToProps = (state, ownProps) => {
   return {onEditWord: ownProps.onEditWord, initialValues: ownProps.currentWord, categoryList: ownProps.categoryList};

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Word from '../components/Word';
+import Word from '../../components/Word';
 
 const mapStateToProps = (state, ownProps) => {
   const word = state.words[state.currentWord] || {};

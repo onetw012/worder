@@ -5,21 +5,28 @@ import {
   connect
 } from 'react-redux';
 import {
-  setNewCategoryName
-} from '../actions';
-import InputText from '../components/InputText';
+  setCategoryName
+} from '../../actions';
+import InputText from '../../components/InputText';
 
 const mapStateToProps = (state, ownProps) => {
-  let hintText, defaultValue, floatingLabelText, fullWidth;
+  let hintText, defaultValue, floatingLabelText, fullWidth, id;
+  const currentCategory = state.categories.find((category) => category.id == ownProps.id);
 
   fullWidth = ownProps.fullWidth || false;
 
   switch (ownProps.type) {
-    case 'SET_NAME':
+    case 'CATEGORY_NAME':
       {
-        hintText = 'Name of new category';
-        floatingLabelText = 'Name';
-        defaultValue = state.newCategory.name;
+        hintText = 'Name of category';
+        floatingLabelText = 'Category name';
+        defaultValue = currentCategory.name;
+        break;
+      }
+    case 'NAME_NEW_CATEGORY':
+      {
+        hintText = 'Name';
+        floatingLabelText = 'Name of new category';
         break;
       }
   }
@@ -34,15 +41,15 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   let fn;
   switch (ownProps.type) {
-    case 'SET_NAME':
+    case 'CATEGORY_NAME':
       {
-        fn = setNewCategoryName;
+        fn = setCategoryName;
         break;
       }
   }
   return {
     onChange: (value) => {
-      dispatch(fn(value));
+      dispatch(fn(value, ownProps.id));
     }
   }
 };

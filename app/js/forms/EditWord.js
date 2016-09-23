@@ -8,7 +8,7 @@ const requiredFields = ['title', 'translation', 'categoryId'];
 
 const EditWordReduxForm = reduxForm({
   validate: validate(requiredFields),
-  form: 'contact',
+  form: 'edit-word',
   fields: ['title', 'translation', 'description', 'categoryId']
 })(EditWordForm);
 

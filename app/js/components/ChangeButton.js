@@ -5,6 +5,8 @@ import Button from './Button';
 
 const mapStateToProps = (state, ownProps) => {
     let text;
+    // FIXME: add activveWords instead of words
+    const activeWordsLength = state.words.length;
     switch (ownProps.type) {
         case 'DECREMENT_WORD': {
             text = 'prev';
@@ -20,6 +22,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     let fn;
+    const activeWordsLength = ownProps.activeWordsLength;
     switch (ownProps.type) {
         case 'DECREMENT_WORD': {
             fn = decrementWordIndex;
@@ -32,7 +35,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     }
     return {
         onClick: () => {
-            dispatch(fn());
+            dispatch(fn(activeWordsLength));
         }
     }
 };

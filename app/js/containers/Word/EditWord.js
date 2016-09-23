@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 
-import {editWord} from '../actions';
-import EditWord from '../components/EditWord';
+import {editWord} from '../../actions';
+import EditWord from '../../components/EditWord';
 
 const mapStateToProps = (state, ownProps) => {
   let wordId = ownProps.params.wordId;
