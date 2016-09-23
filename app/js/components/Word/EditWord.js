@@ -1,18 +1,18 @@
 import React, {PropTypes} from 'react';
 import Subheader from 'material-ui/Subheader';
 
-import EditWordFormContainer from '../containers/Word/EditWordForm';
-import TopTitle from './TopTitle';
+import EditWordFormContainer from '../../containers/Word/EditWordForm';
+import TopTitle from '../TopTitle';
 
-const EditWord = ({params, onEditWord, currentWord, categoryList}) => (
+const EditWord = ({params, onEditWord, editedWord, categoryList}) => (
   <div>
     <TopTitle title="Edit word:" backUrl={'category/' + params.categoryId}/>
-    <EditWordFormContainer onSubmit={onEditWord} currentWord={currentWord} categoryList={categoryList}/>
+    <EditWordFormContainer onSubmit={onEditWord} editedWord={editedWord} categoryList={categoryList}/>
   </div>
 )
 
 EditWord.propTypes = {
-  currentWord: PropTypes.object.isRequired,
+  editedWord: PropTypes.object.isRequired,
   categoryList: PropTypes.array.isRequired,
   params: PropTypes.object.isRequired,
   onEditWord: PropTypes.func.isRequired

@@ -2,7 +2,7 @@ import React from 'react';
 import {reduxForm} from 'redux-form'
 
 import validate from './validate';
-import NewWordFormComponent from '../components/NewWordForm';
+import NewWordFormComponent from '../components/Word/NewWordForm';
 const requiredFields = ['title', 'translation'];
 
 const NewWordReduxForm = reduxForm({

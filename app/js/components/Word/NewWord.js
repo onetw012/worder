@@ -1,9 +1,9 @@
 import React, {PropTypes} from 'react';
 import Subheader from 'material-ui/Subheader';
 
-import BackButton from './BackButton';
-import NewWordReduxForm from '../forms/NewWord';
-import TopTitle from './TopTitle';
+import BackButton from '../BackButton';
+import TopTitle from '../TopTitle';
+import NewWordReduxForm from '../../forms/NewWord';
 
 const NewWord = ({onSubmitForm, params}) => (
   <div>

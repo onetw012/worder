@@ -3,9 +3,10 @@ import MenuItem from 'material-ui/MenuItem'
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import {Field} from 'redux-form';
+import {browserHistory} from 'react-router';
 
-import renderTextField from './renderTextField';
-import renderSelectField from './renderSelectField';
+import renderTextField from '../renderTextField';
+import renderSelectField from '../renderSelectField';
 
 export const categoryListItem = (categoryList) => {
   return categoryList.map((categoryData) => (<MenuItem key={categoryData.id} value={categoryData.id} primaryText={categoryData.name}/>))
@@ -19,7 +20,12 @@ const EditWordForm = ({handleSubmit, pristine, submitting, initialValues, catego
     <Field name="categoryId" component={renderSelectField} label="Category:">
       {categoryListItem(categoryList)}
     </Field>
-    <RaisedButton label="Save" disabled={pristine || submitting} primary type="submit" onClick={() => {}}/>
+    <RaisedButton
+      label="Save"
+      disabled={pristine || submitting}
+      primary type="submit"
+      onClick={() => {}}
+    />
     <FlatButton label="Remove" secondary type="button" onClick={() => onRemove(initialValues.id)}/>
   </form>
 )

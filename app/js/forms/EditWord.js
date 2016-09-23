@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import {reduxForm} from 'redux-form';
 
-import EditWordForm from '../components/EditWordForm';
+import EditWordForm from '../components/Word/EditWordForm';
 import validate from './validate';
 
 const requiredFields = ['title', 'translation', 'categoryId'];

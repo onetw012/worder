@@ -1,5 +1,4 @@
 import React, {PropTypes} from 'react';
-import Subheader from 'material-ui/Subheader';
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 
@@ -7,7 +6,6 @@ import ChangeWordButtons from './ChangeWordButtons';
 
 const Word = ({title, translation, description, showTranslation, showDescription}) => (
   <div className="word-wrap">
-    <Subheader>Words:</Subheader>
     <Card>
       <CardHeader
         title={title}

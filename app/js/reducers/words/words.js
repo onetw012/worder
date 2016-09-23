@@ -20,11 +20,11 @@ export const words = (state = [], action) => {
       });
     }
     case 'REMOVE_WORD': {
-      return state.forEach((word, index, array) => {
-        if (word.id == action.wordId)
-          array.splice(index, 1);
-        }
-      )
+      const wordIndex = state.findIndex(word => String(word.id) === String(action.wordId));
+      return [
+        ...state.slice(0, wordIndex),
+        ...state.slice(wordIndex + 1)
+      ];
     }
     case 'REMOVE_WORDS_BY_CATEGORY': {
       return state.filter(word => String(word.categoryId) !== String(action.categoryId));

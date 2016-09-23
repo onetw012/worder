@@ -2,8 +2,8 @@ import React, {PropTypes} from 'react';
 import {Field} from 'redux-form'
 import RaisedButton from 'material-ui/RaisedButton';
 
-import validate from '../forms/validate';
-import renderTextField from './renderTextField';
+import validate from '../../forms/validate';
+import renderTextField from '../renderTextField';
 
 const requiredFields = ['title', 'translation'];
 

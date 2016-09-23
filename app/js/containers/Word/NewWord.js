@@ -1,8 +1,9 @@
 import {connect} from 'react-redux';
 import {reduxForm} from 'redux-form';
+import {browserHistory} from 'react-router';
 
 import {newWord} from '../../actions';
-import NewWord from '../../components/NewWord';
+import NewWord from '../../components/Word/NewWord';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -12,20 +13,22 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps, dispatchProps) => {
   return {
-    onSubmitForm: (data) => {;
+    onSubmitForm: (data) => {
       dispatch(newWord(data));
     }
   }
 }
 
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
+  const categoryId = parseInt(stateProps.params.categoryId, 10);
   return {
     ...stateProps,
     onSubmitForm: (formData) => {
       dispatchProps.onSubmitForm({
         ...formData,
-        categoryId: parseInt(stateProps.params.categoryId)
+        categoryId
       });
+      browserHistory.push(`category/${categoryId}`);
     }
   }
 }

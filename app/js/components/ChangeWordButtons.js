@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ChangeButton from './ChangeButton';
+import ChangeButton from '../containers/ChangeButton';
 
 const ChangeWordButtons = () => (
   <div>
